@@ -7,7 +7,7 @@ import { LoginGuardGuard } from './shared/guard/login-guard.guard';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,canActivate:[LoginGuardGuard]},
+  {path:'dashboard',component:DashboardComponent},
   {
     path: 'admin',
     loadChildren:() =>import('./admin/admin.module').then(mod=>mod.AdminModule)

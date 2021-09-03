@@ -7,10 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToastrModule } from 'ngx-toastr';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserDetailsComponent,
+    EditUserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

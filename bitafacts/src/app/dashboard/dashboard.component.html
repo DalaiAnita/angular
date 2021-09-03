@@ -1,1 +1,28 @@
-<p>dashboard works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">User Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-active" *ngFor="let data of userList;let i=index">
+            <td>{{i+1}}</td>
+            <th scope="row" (click)="onClickRowData(data)">{{data.userId}}</th>
+            <td>{{data.userName}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.role}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="row col-12"  *ngIf="selectedUser">
+    <div class="col-9">
+        <app-user-details [user]="selectedUser"></app-user-details>
+    </div>
+    <div class="col-3">
+        <app-edit-user-details [user]="selectedUser" (editedData)="onSaveEditedRow($event)"></app-edit-user-details>
+    </div>
+</div>
